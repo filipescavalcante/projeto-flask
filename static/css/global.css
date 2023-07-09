@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+body {
+    background-color: lightcyan;
+}
+
+td, th {
+    border: 1px solid black;
+    margin: 0px;
+    text-align: right;
+    width: 350px;
+}
