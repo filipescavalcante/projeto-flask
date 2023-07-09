@@ -13,10 +13,8 @@ def helloWorld():
     con.commit()
     
     res = cursor.execute("SELECT * FROM musicas")
-
-    nome = 'Filipe'
     
-    return render_template('index.html', nome=nome)
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
