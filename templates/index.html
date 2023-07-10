@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List - Python</title>
+    <title>Fav Musics - Python</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
-    <script src=" {{ url_for('static', filename='js/script.js') }}"></script>
 </head>
 <body>
     <h1>Músicas Favoritas</h1>
-    <p>Adicionar música à lista <button onclick="addForm()" id="add-item">+</button></p>
+    <p>Adicionar música à lista <button id="add-item">+</button></p>
 
-    <form id="add" action="/adicionar" method="post">
+    <form action="/add" method="post">
+        <button id="close">X</button>
+
+        <h2>    Preencha os dados da música</h2>
+
         <label for="titulo">Título</label>
         <input type="text" name="titulo" id="titulo" required>
 
@@ -24,7 +27,7 @@
         <label for="ano">Ano de Lançamento</label>
         <input type="text" name="ano" id="ano" required>
 
-        <input type="submit" value="Adicionar">
+        <button id="submit">Adicionar</button>
     </form>
 
     <table>
@@ -48,4 +51,6 @@
         </tbody>
     </table>
 </body>
+
+<script src=" {{ url_for('static', filename='js/script.js') }}"></script>
 </html>
