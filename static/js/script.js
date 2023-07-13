@@ -19,7 +19,7 @@ closeBtn.addEventListener('click', () => {
     }
 )
 
-submitBtn.addEventListener('click', () => {
+submitBtn.addEventListener('click', (e) => {
     form.submit()
-    console.log('ola')
+    e.preventDefault()
 })

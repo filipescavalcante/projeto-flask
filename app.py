@@ -38,14 +38,10 @@ def tabela():
     con.commit()
 
     musicArray = cursor.fetchall()
-    res = ''
+    
+    con.close()
 
-    for n in musicArray:
-        res += f'''
-        <p>Música: {n[0]}, Banda: {n[1]}, Álbum: {n[2]}, Ano de Lançamento: {n[3]}</p>
-        '''
-
-    return f'<h1>Resultado</h1> {musicArray}'
+    return render_template('index.html', musicArray=musicArray)
 
 if __name__ == "__main__":
     app.run(debug=True)

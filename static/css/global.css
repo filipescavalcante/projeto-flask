@@ -21,6 +21,8 @@ td {
 table {
     border-spacing: 0px;
     background-color: white;
+    margin: auto;
+    max-width: 700px;
 }
 
 thead {
@@ -32,6 +34,26 @@ thead {
 td{
     text-align: right;
     width: 350px;
+}
+
+#acoes {
+    text-align: center;
+}
+
+#editar,
+#excluir {
+    border: 1px solid black;
+    border-radius: 7px;
+    margin: 3px 0;
+    padding: 5px;
+}
+
+#editar {
+    background-color: rgb(255, 247, 0);
+}
+
+#excluir {
+    background-color: rgb(231, 1, 1);
 }
 
 #add-item {
