@@ -2,17 +2,9 @@ from flask import Flask, request, render_template
 import sqlite3
 
 app = Flask(__name__)
-
+    
 @app.route("/")
 def index():
-    con = sqlite3.connect('database.db')
-    cursor = con.cursor()
-
-    cursor.execute("DROP TABLE IF EXISTS musicas")
-    cursor.execute("CREATE TABLE musicas(titulo text, banda text, album text, ano text)")
-    con.commit()
-    con.close()
-    
     return render_template('index.html')
 
 @app.route("/add", methods=['POST'])
