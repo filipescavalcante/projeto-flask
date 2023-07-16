@@ -24,7 +24,7 @@ td {
 table {
     border-spacing: 0px;
     background-color: white;
-    margin: auto;
+    margin: 7px auto;
     max-width: 700px;
 }
 
@@ -46,12 +46,15 @@ td{
 #editar,
 #excluir {
     border: none;
-    border-radius: 7px;
-    margin: 2px 0px;
+    border-radius: 50%;
+    margin: 2px 2px;
     padding: 5px;
-    color: white;
     text-decoration: none;
     cursor: pointer;
+    font-size: 15px;
+    height: 30px;
+    width: 30px;
+    transition: 0.4s;
 }
 
 #editar {
@@ -60,6 +63,16 @@ td{
 
 #excluir {
     background-color: rgb(202, 0, 0);
+}
+
+#editar:hover {
+    background-color: rgb(143, 112, 2);
+    color: white;
+}
+
+#excluir:hover {
+    background-color: rgb(128, 2, 2);
+    color: white;
 }
 
 #add-item {
@@ -137,4 +150,11 @@ a {
 
 #exibir {
     width: 200px;
+    border: none;
+    border-radius: 10px;
+    background-color: orange;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+    cursor: pointer;
 }

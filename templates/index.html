@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fav Musics - Python</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <script src="https://kit.fontawesome.com/e96315afdc.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1>Músicas Favoritas</h1>
     <p>Adicionar música à lista <button id="add-item">+</button></p>
 
-    <form action="/tabela" method="POST">
+    <form action="/add" method="POST">
         <button id="close">X</button>
 
         <h2>    Preencha os dados da música</h2>
@@ -51,8 +52,8 @@
                 <td> {{ n[3] }} </td>
                 <td> {{ n[4] }} </td>
                 <td id="acoes">
-                    <button id="editar">Editar</button>
-                    <button id="excluir">Excluir</button>
+                    <button id="editar"><i class="fa-solid fa-pencil"></i></button>
+                    <button id="excluir"><i class="fa-solid fa-trash"></i></button>
                 </td>
             </tr>
         {% endfor %}

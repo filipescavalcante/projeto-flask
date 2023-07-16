@@ -1,13 +1,7 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 import sqlite3
 
 app = Flask(__name__)
-
-# con = sqlite3.connect('musicas.db')
-# cursor = con.cursor()
-
-# con.commit()
-# con.close()
     
 @app.route("/")
 def index():
@@ -19,8 +13,8 @@ def index():
 
     return render_template('index.html', musicArray=musicArray)
 
-@app.route("/tabela", methods=['POST'])
-def tabela():
+@app.route("/add", methods=['POST'])
+def add():
     con = sqlite3.connect('musicas.db')
     cursor = con.cursor()
 
@@ -36,15 +30,12 @@ def tabela():
     VALUES (?, ?, ?, ?);
     '''
 
-    cursor.execute(sql,[titulo, banda, album, ano])
-    cursor.execute('SELECT * FROM musicas')
+    cursor.execute(sql, [titulo, banda, album, ano])
 
-    musicArray = cursor.fetchall()
-    
     con.commit()
     con.close()
 
-    return render_template('tabela.html', musicArray=musicArray)
+    return redirect(url_for('index'))
 
 if __name__ == "__main__":
     app.run(debug=True)
