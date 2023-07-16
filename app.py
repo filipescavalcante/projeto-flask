@@ -9,7 +9,7 @@ def index():
 
 @app.route("/add", methods=['POST'])
 def tabela():
-    con = sqlite3.connect('database.db')
+    con = sqlite3.connect('musicas.db')
     cursor = con.cursor()
 
     data = request.form
