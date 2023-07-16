@@ -10,7 +10,7 @@
     <h1>Músicas Favoritas</h1>
     <p>Adicionar música à lista <button id="add-item">+</button></p>
 
-    <form action="/tabela" method="POST">
+    <form action="/add" method="POST">
         <button id="close">X</button>
 
         <h2>    Preencha os dados da música</h2>
@@ -30,7 +30,7 @@
         <button id="submit">Adicionar</button>
     </form>
 
-    <table style="display: none;">
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
@@ -58,9 +58,9 @@
         {% endfor %}
         </tbody>
     </table>
-</body>
 
-<button id="exibir">Exibir Músicas</button>
+    <a href="/">Página Inicial</a>
+</body>
 
 <script src=" {{ url_for('static', filename='js/script.js') }}"></script>
 </html>

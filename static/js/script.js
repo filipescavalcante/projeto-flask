@@ -1,10 +1,12 @@
 const addItemBtn = document.querySelector('#add-item')
 const submitBtn = document.querySelector('#submit')
 const closeBtn = document.querySelector('#close')
+const exibirBtn = document.querySelector('#exibir') 
 
 const form = document.querySelector('form')
 const addItemText = document.querySelector('p')
 const inputs = [...document.querySelectorAll('input[type="text"]')]
+const table = document.querySelector('table')
 
 addItemBtn.addEventListener('click', () => {
     form.style.display = 'flex'
@@ -22,4 +24,14 @@ closeBtn.addEventListener('click', () => {
 submitBtn.addEventListener('click', (e) => {
     form.submit()
     e.preventDefault()
+})
+
+exibirBtn.addEventListener('click', () => {
+    if (table.style.display == 'none') {
+        table.style.display = 'block'
+        exibirBtn.innerHTML = 'Esconder Músicas'
+    } else if (table.style.display != 'none'){
+        table.style.display = 'none'
+        exibirBtn.innerHTML = 'Exibir Músicas'
+    }
 })
