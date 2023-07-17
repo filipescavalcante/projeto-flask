@@ -7,6 +7,8 @@ const form = document.querySelector('form')
 const addItemText = document.querySelector('p')
 const inputs = [...document.querySelectorAll('input[type="text"]')]
 const table = document.querySelector('table')
+const tableBody = document.querySelector('tbody')
+const tableHead = document.querySelector('thead')
 
 addItemBtn.addEventListener('click', () => {
     form.style.display = 'flex'
@@ -27,11 +29,11 @@ submitBtn.addEventListener('click', (e) => {
 })
 
 exibirBtn.addEventListener('click', () => {
-    if (table.style.display == 'none') {
-        table.style.display = 'block'
-        exibirBtn.innerHTML = 'Esconder Músicas'
-    } else if (table.style.display != 'none'){
+    if (table.style.display != 'none') {
         table.style.display = 'none'
         exibirBtn.innerHTML = 'Exibir Músicas'
+    } else if (table.style.display == 'none'){
+        table.style.display = 'block'
+        exibirBtn.innerHTML = 'Esconder Músicas'
     }
 })

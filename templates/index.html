@@ -31,10 +31,9 @@
         <button id="submit">Adicionar</button>
     </form>
 
-    <table style="display: none;">
+    <table>
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Título</th>
                 <th>Banda</th>
                 <th>Álbum</th>
@@ -46,14 +45,13 @@
         <tbody>
         {% for n in musicArray %}
             <tr>
-                <td>{{ n[0] }}</td>
                 <td> {{ n[1] }} </td>
                 <td> {{ n[2] }} </td>
                 <td> {{ n[3] }} </td>
                 <td> {{ n[4] }} </td>
                 <td id="acoes">
-                    <button id="editar"><i class="fa-solid fa-pencil"></i></button>
-                    <button id="excluir"><i class="fa-solid fa-trash"></i></button>
+                    <a href="#" id="editar"><i class="fa-solid fa-pencil"></i></a>
+                    <a href="/excluir/{{ n[0] }}" id="excluir"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
         {% endfor %}
@@ -61,7 +59,7 @@
     </table>
 </body>
 
-<button id="exibir">Exibir Músicas</button>
+<button id="exibir">Esconder Músicas</button>
 
 <script src=" {{ url_for('static', filename='js/script.js') }}"></script>
 </html>

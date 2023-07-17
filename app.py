@@ -37,5 +37,20 @@ def add():
 
     return redirect(url_for('index'))
 
+@app.route("/excluir/<id>", methods=['POST', 'GET'])
+def excluir(id):
+    con = sqlite3.connect('musicas.db')
+    cursor = con.cursor()
+
+    sql = 'DELETE FROM musicas WHERE id = ?'
+
+    cursor.execute(sql,[id])
+
+    con.commit()
+    con.close()
+
+    return redirect(url_for('index'))
+
+
 if __name__ == "__main__":
     app.run(debug=True)
