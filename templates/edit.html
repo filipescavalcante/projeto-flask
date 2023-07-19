@@ -8,11 +8,11 @@
     <script src="https://kit.fontawesome.com/e96315afdc.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <main>
+    <main class="overlay">
         <h1>Músicas Favoritas</h1>
         <p>Adicionar Música <button id="add-item"><i class="fa-solid fa-plus"></i></button></p>
 
-        <form action="/add" method="POST">
+        <form id="main-form" action="/add" method="POST">
             <button id="close-form"><i class="fa-sharp fa-solid fa-xmark"></i></button>
 
             <h2>Preencha os dados da música</h2>
@@ -49,14 +49,46 @@
                     <td> {{ n[3] }} </td>
                     <td> {{ n[4] }} </td>
                     <td id="acoes">
-                        <a href="/editar/{{ n[0] }}" id="editar"><i class="fa-solid fa-pencil"></i></a>
+                        <a id="editar"><i class="fa-solid fa-pencil"></i></a>
                         <a href="/excluir/{{ n[0] }}" id="excluir"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
+        <button id="exibir">Esconder Músicas</button>
     </main>
+
+    <div class="editar-db">
+        <a href="/"><button id="close-edit-form"><i class="fa-sharp fa-solid fa-xmark"></i></button></a>
+
+        <h2>Editar</h2>
+
+        <form id="update-form" action="/update/{{ dados[0][0] }}" method="post">
+
+            <div class="form-control">
+                <label for="novo-titulo">Título</label>
+                <input type="text" name="novo-titulo" id="novo-titulo" value="{{ dados[0][1] }}">
+            </div>
+
+            <div class="form-control">
+                <label for="novo-banda">Banda</label>
+                <input type="text" name="novo-banda" id="novo-banda" value="{{ dados[0][2] }}">
+            </div>
+
+            <div class="form-control">
+                <label for="novo-album">Album</label>
+                <input type="text" name="novo-album" id="novo-album" value="{{ dados[0][3] }}">
+            </div>
+
+            <div class="form-control">
+                <label for="novo-banda">Ano</label>
+                <input type="text" name="novo-ano" id="novo-ano" value="{{ dados[0][4] }}">
+            </div>
+        </form>
+        <button id="update">Atualizar</button>
+
+    </div>
 </body>
 
 <script src=" {{ url_for('static', filename='js/script.js') }}"></script>

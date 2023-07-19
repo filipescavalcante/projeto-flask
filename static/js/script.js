@@ -1,14 +1,14 @@
 const addItemBtn = document.querySelector('#add-item')
 const submitBtn = document.querySelector('#submit')
-const closeBtn = document.querySelector('#close')
-const exibirBtn = document.querySelector('#exibir') 
+const closeBtn = document.querySelector('#close-form')
+const updateBtn = document.querySelector('#update')
 
+const main = document.querySelector('main')
 const form = document.querySelector('form')
+const updateForm = document.querySelector('#update-form')
 const addItemText = document.querySelector('p')
 const inputs = [...document.querySelectorAll('input[type="text"]')]
 const table = document.querySelector('table')
-const tableBody = document.querySelector('tbody')
-const tableHead = document.querySelector('thead')
 
 addItemBtn.addEventListener('click', () => {
     form.style.display = 'flex'
@@ -23,17 +23,10 @@ closeBtn.addEventListener('click', () => {
     }
 )
 
-submitBtn.addEventListener('click', (e) => {
+submitBtn.addEventListener('click', () => {
     form.submit()
-    e.preventDefault()
 })
 
-exibirBtn.addEventListener('click', () => {
-    if (table.style.display != 'none') {
-        table.style.display = 'none'
-        exibirBtn.innerHTML = 'Exibir Músicas'
-    } else if (table.style.display == 'none'){
-        table.style.display = 'block'
-        exibirBtn.innerHTML = 'Esconder Músicas'
-    }
+updateBtn.addEventListener('click', () => {
+    updateForm.submit()
 })
